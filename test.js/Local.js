@@ -8,21 +8,34 @@ let signup=()=>{
     let inppassword=document.querySelector("#pass").value
 
     let errname=document.querySelector("#errname")
-    let erremail=document.querySelector("#errname")
-    let errpassword=document.querySelector("#email")
+    let errmail=document.querySelector("#erremail")
+    let errpassword=document.querySelector("#errpass")
 
     if(inpname==""){
         errname.innerHTML="Please enter name"
+        errname.style.color="red"
         return false;
     }
-    if(inpname==""){
-        erremail.innerHTML="Please enter name"
+    if(inpemail==""){
+        errmail.innerHTML="Please enter Email"
+        errmail.style.color="red"
         return false;
     }
-    if(inpname==""){
-        errpassword.innerHTML="Please enter name"
+    if(inppassword==""){
+        errpassword.innerHTML="Please enter password"
+        errpassword.style.color="red"
         return false;
     }
+    else if(!(inpemail.includes('@') && inpemail.includes(".com"))){
+        errmail.innerHTML="Please Enter the Valid E-mail @,.com"
+        errmail.style.color="red"
+        return false;
+     }
+     else if(!(inppassword.match([/123456789/])&& inppassword.match([/!@#$%&*.,/])&& inppassword.match([/a-z/]))){
+        errpassword.innerHTML="Please Enter Strong Password Write dots,symbols,number"
+        errpassword.style.color="red"
+        return false;
+     }
 
     localStorage.setItem("name",inpname)
     localStorage.setItem("email",inpemail)
@@ -34,9 +47,12 @@ let signup=()=>{
 
 }    
 
-let login=()=>{
+let loginup=()=>{
     let loginname=document.querySelector("#logininp").value
     let loginpass=document.querySelector("#loginpass").value
+
+    // let errormail=document.querySelector("#errmail")
+    // let errorpass=document.querySelector("#errpassw")
 
     let localname=localStorage.getItem("name")
     let localpass=localStorage.getItem("pass")
@@ -44,11 +60,15 @@ let login=()=>{
     if(loginname==localname && loginpass==localpass){
         location.href="localHome.html"
     }
-    else{
+    else {
         alert("invalid username or password")
+       // errorpass.innerHTML="invalid "
 
         return false;
     }
+    
+
+    
 
 
 }
