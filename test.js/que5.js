@@ -8,7 +8,7 @@
 //   }
 // }
 
-// let shiv=()=>{
+ let shiv=()=>{
 let aoo=[
   {
     name:"shivani",
@@ -29,4 +29,4 @@ let aoo=[
     return console.log(e.ans);
 
   })
-  
+}

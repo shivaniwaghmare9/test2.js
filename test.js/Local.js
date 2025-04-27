@@ -1,5 +1,15 @@
 
 
+VANTA.CLOUDS({
+    el: "#ani",
+    mouseControls: true,
+    touchControls: true,
+    gyroControls: false,
+    minHeight: 200.00,
+    minWidth: 200.00
+  })
+
+
 let signup=()=>{
 
 
@@ -16,7 +26,7 @@ let signup=()=>{
         errname.style.color="red"
         return false;
     }
-    if(inpemail==""){
+    /*if(inpemail==""){
         errmail.innerHTML="Please enter Email"
         errmail.style.color="red"
         return false;
@@ -25,13 +35,13 @@ let signup=()=>{
         errpassword.innerHTML="Please enter password"
         errpassword.style.color="red"
         return false;
-    }
+    }*/
     else if(!(inpemail.includes('@') && inpemail.includes(".com"))){
         errmail.innerHTML="Please Enter the Valid E-mail @,.com"
         errmail.style.color="red"
         return false;
      }
-     else if(!(inppassword.match([/123456789/])&& inppassword.match([/!@#$%&*.,/])&& inppassword.match([/a-z/]))){
+     else if(!(inppassword.match([/1234567890/])&& inppassword.match([/!@#$%&*.,/])&& inppassword.match([/a-z/]) && inppassword.match(/A-Z/))){
         errpassword.innerHTML="Please Enter Strong Password Write dots,symbols,number"
         errpassword.style.color="red"
         return false;
@@ -64,8 +74,9 @@ let loginup=()=>{
         alert("invalid username or password")
        // errorpass.innerHTML="invalid "
 
-        return false;
+       
     }
+    return false;
     
 
     
