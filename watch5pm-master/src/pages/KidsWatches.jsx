@@ -41,13 +41,7 @@ const KidsWatches=()=>{
     )
  })
 
-
-
-
-
-
-
-    return(
+ return(
         <>
 
            
